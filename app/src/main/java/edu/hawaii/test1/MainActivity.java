@@ -10,12 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class MainActivity extends Activity
 {
 
-    private TextView textCount;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -40,7 +38,6 @@ public class MainActivity extends Activity
                 Cursor c = getContentResolver().query(sms_content, null, "read = 0", null, null);
                 c.moveToFirst();
                 int unreadMessagesCount = c.getCount();
-                String txtCountView = Integer.toString(c.getCount());
 
                 if (unreadMessagesCount > 0) {
 
@@ -60,13 +57,6 @@ public class MainActivity extends Activity
                         bit_2 = BitmapFactory.decodeResource(getResources(), R.drawable.fish_2);
                         myImageView.setImageBitmap(bit);
                         myImageView_2.setImageBitmap(bit_2);
-                    }else if (unreadMessagesCount == 3) {
-                        bit = BitmapFactory.decodeResource(getResources(), R.drawable.fish);
-                        bit_2 = BitmapFactory.decodeResource(getResources(), R.drawable.fish_2);
-                        bit_3 = BitmapFactory.decodeResource(getResources(), R.drawable.fish_3);
-                        myImageView.setImageBitmap(bit);
-                        myImageView_2.setImageBitmap(bit_2);
-                        myImageView_3.setImageBitmap(bit_3);
                     }else {
                         bit = BitmapFactory.decodeResource(getResources(), R.drawable.fish);
                         bit_2 = BitmapFactory.decodeResource(getResources(), R.drawable.fish_2);
@@ -74,9 +64,6 @@ public class MainActivity extends Activity
                         myImageView.setImageBitmap(bit);
                         myImageView_2.setImageBitmap(bit_2);
                         myImageView_3.setImageBitmap(bit_3);
-
-                        textCount = (TextView) findViewById(R.id.textView);
-                        textCount.setText(txtCountView);
                     }
 
                     AnimatorSet fishSet = (AnimatorSet) AnimatorInflater.loadAnimator(MainActivity.this, R.animator.animation);
