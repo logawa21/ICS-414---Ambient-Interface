@@ -5,8 +5,7 @@
     <objectAnimator
         android:duration="5000"
         android:propertyName="x"
-        android:repeatCount="infinite"
-        android:repeatMode="restart"
+        android:repeatCount="1"
         android:valueFrom="-500"
         android:valueTo="1500"
         android:valueType="floatType" />
