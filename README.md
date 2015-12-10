@@ -1,2 +1,2 @@
-# ICS-414---Ambient-Interface
-Fish Bowl
+# ICS-414-Team Ayibe's Ambient-Interface
+Fish Bowl Android Application
